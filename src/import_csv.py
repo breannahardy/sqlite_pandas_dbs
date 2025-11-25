@@ -12,7 +12,8 @@ def main():
     df = pd.read_csv(CSV_PATH, dtype=str)  
 
     # Create the database engine.
-    engine = create_engine(f"sqlite:///{DB_PATH}")
+    engine = create_engine("sqlite:///clinic_simple.db")
+
 
     df.to_sql("patients", con=engine, if_exists="append", index=False)
 
